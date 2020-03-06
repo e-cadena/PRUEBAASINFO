@@ -1,0 +1,24 @@
+<html>
+ <head>
+  <script>
+    String.prototype.reverse=function(){return this.split("").reverse().join("");}
+
+   function palindromo(word) {
+    var inverseWord = word.reverse();
+    if (word == inverseWord) { 
+     alert("La palabra '"+word+"' Coincide. Es un Palindromo");
+     return(true);
+    }
+    else {
+     alert("La palabra '"+word+"' No hay coincidencia: '"+inverseWord+"'");
+     return(false);
+    } 
+   } 
+  </script>
+ </head>
+ 
+ <body>
+  <input type="text" placeholder="Ingrese el texto." id="input-word" />
+  <input type="button" onclick="palindromo(document.getElementById('input-word').value)" value="Evaluar" />
+ </body>
+</html>
