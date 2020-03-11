@@ -1,6 +1,6 @@
 ;
 
-codigo de muestra para funcionar...
+nuevo mensaje 
 app.use('/server', rutas)
 
 module.exports = app
