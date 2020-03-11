@@ -13,11 +13,18 @@ exports.up = function(knex, Promise) {
         t.increments('id');
         t.string('numero', 10).notNullable();
         t.integer('idPersonas').notNullable();
+     })
+
+    .createTable('dias', function (t) {
+        t.increments('id');
+        t.string('numero', 10).notNullable();
+        t.integer('idPersonas').notNullable();
      });
 };
 
 exports.down = function(knex, Promise) {
     return knex.schema
     .dropTable("personas")
-    .dropTable("telefonos");
+    .dropTable("telefonos")
+    .dropTable("dias");
 };
