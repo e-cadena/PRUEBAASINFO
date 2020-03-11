@@ -5,22 +5,7 @@ let db = require('knex')(config[env])
 
 
 
-let leerTablaId = (req, res) => {
-    let campos = req.body.campos
-    let tabla = req.body.tabla
-    let condicion = req.body.condicion
-    db(tabla).where(condicion).select(campos)
-    .then(registros => {
-        return res.status(200).json({
-            datos: registros
-        })
-    })
-    .catch(error => {
-        return res.status(404).json({
-            datos: error
-        })
-    })
-}
+
 
 let ingresarDia = (req,res) => {
     let campos = req.body.campos
@@ -61,8 +46,6 @@ let modificarDia = (req, res) => {
 
 
 module.exports = {
-   leerTabla,
-   leerTablaId,
    ingresarDia,
    modificarDia
 }
